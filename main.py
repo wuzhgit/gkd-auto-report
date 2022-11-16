@@ -1,6 +1,7 @@
 import requests
 import time
 import os
+from datetime import datetime
 
 s = requests.Session()
 
@@ -37,20 +38,20 @@ def submit(s: requests.Session):
 
         # submitted date
         "date": time.strftime(r"%Y-%m-%d", time_now),
-        "jzdz": "北京市怀柔区中国科学院大学雁栖湖校区西区一公寓",     # Residential Address
-        "zrzsdd": "1",                       # Yesterday place to stay    1.雁栖湖  8.京外
+        "jzdz": "北京市石景山区玉泉路19号甲",     # Residential Address
+        "zrzsdd": "2",                       # Yesterday place to stay    1.雁栖湖  8.京外
         # Whether you are in school or not  1.是, 主要是在雁栖湖校区   5.否
-        "sfzx": "1",
+        "sfzx": "2",
         "szgj": "中国",                       # current country
         "szdd": "国内",                       # current address
         "dqszdd": "1",                       # current location
 
         #
-        "address": "北京市怀柔区",
-        "area": "怀柔区",
+        "address": "北京市石景山区",
+        "area": "石景山区",
         "province": "北京市",
         "city": "",
-        "geo_api_info": "{\"address\":\"北京市怀柔区\",\"details\":\"怀北镇中国科学院大学雁栖湖校区公寓中国科学院大学雁栖湖校区西区\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"怀柔区\",\"value\":\"\"}}",
+        "geo_api_info": "{\"address\":\"北京市石景山区\",\"details\":\"玉泉路19号甲\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"石景山区\",\"value\":\"\"}}",
         "szgj_api_info": "{\"area\":{\"label\":\"\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"address\":\"\",\"details\":\"\",\"province\":{\"label\":\"\",\"value\":\"\"}}",
         "szgj_select_info": {},
         #
@@ -70,16 +71,16 @@ def submit(s: requests.Session):
         "sfjshsjc": "1",                     # PCR test?       1.是 0.否
         # 第一针接种
         "dyzymjzqk": "3",                    # first vaccination situation  3.已接种
-        "dyzjzsj": "2021-03-07",             # date of first vaccination
+        "dyzjzsj": "2021-03-27",             # date of first vaccination
         "dyzwjzyy": "",
         # 第二针接种
         "dezymjzqk": "3",                    # second vaccination situation  3.已接种
-        "dezjzsj": "2021-03-28",             # date of second vaccination
+        "dezjzsj": "2021-04-21",             # date of second vaccination
         "dezwjzyy": "",
         # 第三针接种
-        "dszymjzqk": "6",                    # third vaccination situation  6.未接种
-        "dszjzsj": "2000-01-01",             # default time
-        "dszwjzyy": "在吃其他药物",            # reason of non-vaccination
+        "dszymjzqk": "3",                    # third vaccination situation  6.未接种
+        "dszjzsj": "2021-11-02",             # default time
+        "dszwjzyy": "",            # reason of non-vaccination
 
         "gtshryjkzk": "1",                   # health situation
         "extinfo": "",                       # other information
@@ -88,12 +89,12 @@ def submit(s: requests.Session):
         # "created_uid":"0",
         # "todaysfhsjc":"",
         # "is_daily":1,
-        "geo_api_infot": "{\"address\":\"北京市怀柔区\",\"details\":\"怀北镇中国科学院大学雁栖湖校区公寓中国科学院大学雁栖湖校区西区\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"怀柔区\",\"value\":\"\"}}",
+        "geo_api_infot": "{\"address\":\"北京市石景山区\",\"details\":\“玉泉路19号甲\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"石景山区\",\"value\":\"\"}}",
 
         # yesterday information
         "old_szdd": "国内",
         'app_id': 'ucas'，
-        "old_city": "{\"address\":\"北京市怀柔区\",\"details\":\"怀北镇中国科学院大学雁栖湖校区公寓中国科学院大学雁栖湖校区西区\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"怀柔区\",\"value\":\"\"}}",
+        "old_city": "{\"address\":\"北京市石景山区\",\"details\":\"玉泉路19号甲\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"石景山区\",\"value\":\"\"}}",
     }
 
     r = s.post("https://app.ucas.ac.cn/ucasncov/api/default/save", data=new_daily)
