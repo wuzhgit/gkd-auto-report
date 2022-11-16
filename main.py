@@ -92,6 +92,7 @@ def submit(s: requests.Session):
 
         # yesterday information
         "old_szdd": "国内",
+        'app_id': 'ucas'，
         "old_city": "{\"address\":\"北京市怀柔区\",\"details\":\"怀北镇中国科学院大学雁栖湖校区公寓中国科学院大学雁栖湖校区西区\",\"province\":{\"label\":\"北京市\",\"value\":\"\"},\"city\":{\"label\":\"\",\"value\":\"\"},\"area\":{\"label\":\"怀柔区\",\"value\":\"\"}}",
     }
 
